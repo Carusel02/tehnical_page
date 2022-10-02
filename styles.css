@@ -12,7 +12,7 @@ body {
 }
 
 p {
-  margin-bottom: 0.5em;
+  margin: 10px;
 }
 
 .tab {
@@ -31,7 +31,7 @@ p {
   position: fixed;
   top: 0;
   left: 0;
-  width: 20vw;
+  width: 270px;
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
@@ -86,14 +86,30 @@ code {
 
 #main-doc {
   position: absolute;
-  margin-left: 20vw;
+  margin-left: 270px;
   padding: 20px;
   margin-bottom: 110px;
 }
 
-@media (max-width: 1000px) {
-    header {
-    font-size: 40px;
+
+@media only screen and (max-width: 600px) {
+    /* For mobile phones: */
+    #navbar {
+      position: absolute;
+      top: 0;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      max-height: 300px;
+      background-color: #0E0B16;
+      color: #FFEEDB;
     }
+  
+    #main-doc {
+      position: relative;
+      margin-left: 0px;
+      margin-top: 300px;
+    }
+
 }
   

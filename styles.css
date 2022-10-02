@@ -94,13 +94,17 @@ code {
 
 @media only screen and (max-width: 600px) {
     /* For mobile phones: */
+    body {
+      font-size: 16px;
+    }
+    
     #navbar {
       position: absolute;
       top: 0;
       padding: 0;
       margin: 0;
       width: 100%;
-      max-height: 300px;
+      max-height: 285px;
       background-color: #0E0B16;
       color: #FFEEDB;
     }
@@ -108,7 +112,7 @@ code {
     #main-doc {
       position: relative;
       margin-left: 0px;
-      margin-top: 300px;
+      margin-top: 285px;
     }
 
 }

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Tehnical Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <nav id="navbar">
+    <header class="title">C (programming language)</header>
+    <a class="nav-link" href="#Introduction">Introduction</a>
+    <a class="nav-link" href="#Syntax">Syntax</a>
+    <a class="nav-link" href="#'Hello,_world'_example">'Hello, world' example</a>
+    <a class="nav-link" href="#Data_types">Data types</a>
+    <a class="nav-link" href="#Arrays">Arrays</a>
+  </nav>
+  <main id="main-doc">
+    <section class="main-section" id="Introduction">
+      <header>Introduction</header>
+      <p>C is an imperative, procedural language in the ALGOL tradition.
+        It has a static type system. In C, all executable code is contained within subroutines
+        (also called "functions", though not in the sense of functional programming).
+        Function parameters are passed by value, although arrays are passed as pointers,
+        i.e. the address of the first item in the array. Pass-by-reference is simulated in C
+        by explicitly passing pointers to the thing being referenced. The C language also exhibits the following
+        characteristics:
+      </p>
+
+      <ul>
+        <li>It has a large number of arithmetic, bitwise, and logic operators: +,+=,++,&,||, etc.</li>
+        <li>More than one assignment may be performed in a single statement.</li>
+        <li>Functions may not be defined within the lexical scope of other functions.</li>
+        <li>Memory can be allocated to a program with calls to library routines.</li>
+        <li>Low-level access to computer memory is possible by converting machine addresses to pointers.</li>
+        <li>The generated code after compilation has relatively straightforward needs on the underlying platform.</li>
+        <li>A preprocessor performs macro definition, source code file inclusion, and conditional compilation.</li>
+      </ul>
+      <p></p>
+    </section>
+    <section class="main-section" id="Syntax">
+      <header>Syntax</header>
+      <p>C has a formal grammar specified by the C standard. Line endings are generally not significant in C; however,
+        line boundaries do have significance during the preprocessing phase. Comments may appear either between the
+        delimiters /* and */,
+        or (since C99) following // until the end of the line. Comments delimited by /* and */ do not nest, and these
+        sequences of characters
+        are not interpreted as comment delimiters if they appear inside string or character literals.</p>
+      <p>C source files contain declarations and function definitions. Function definitions, in turn, contain
+        declarations and statements.
+        Declarations either define new types using keywords such as struct, union, and enum, or assign types to and
+        perhaps reserve storage for new variables,
+        usually by writing the type followed by the variable name. Keywords such as char and int specify built-in types.
+        Sections of code are enclosed in braces
+        ({ and }, sometimes called "curly brackets") to limit the scope of declarations and to act as a single statement
+        for control structures.</p>
+      <code>/* Syntax */
+        struct structureName { 
+            <span class="tab"> dataType memberVariable1;</span>
+            <span class="tab"> datatype memberVariable2;</span>
+            <span class="tab"> ...</span>
+         };</code>
+      <p>As an imperative language, C uses statements to specify actions. The most common statement is an expression
+        statement, consisting of an expression
+        to be evaluated, followed by a semicolon; as a side effect of the evaluation, functions may be called and
+        variables may be assigned new values. To modify the normal
+        sequential execution of statements, C provides several control-flow statements identified by reserved keywords.
+        Structured programming is supported by if ... [else]
+        conditional execution and by do ... while, while, and for iterative execution (looping). The for statement has
+        separate initialization, testing, and reinitialization
+        expressions, any or all of which can be omitted. break and continue can be used to leave the innermost enclosing
+        loop statement or skip to its reinitialization. There
+        is also a non-structured goto statement which branches directly to the designated label within the function.
+        switch selects a case to be executed based on the value of
+        an integer expression.</p>
+    </section>
+    <section class="main-section" id="'Hello,_world'_example">
+      <header>'Hello, world' example</header>
+      <p>The "hello, world" example, which appeared in the first edition of K&R, has become the model for an
+        introductory program in most programming textbooks.
+        The program prints "hello, world" to the standard output, which is usually a terminal or screen display. The
+        original version was:</p>
+      <code>main() {
+            <span class="tab">printf("hello, world\n");</span>
+            }
+        </code>
+      <p>A standard-conforming "hello, world" program is:</p>
+      <code> #include
+            int main(void)  {
+            <span class="tab">printf("hello, world\n");</span>
+            }
+        </code>
+      <p>The first line of the program contains a preprocessing directive, indicated by #include. This causes the
+        compiler to replace that line with the entire text
+        of the stdio.h standard header, which contains declarations for standard input and output functions such as
+        printf and scanf. The angle brackets surrounding stdio.h
+        indicate that stdio.h is located using a search strategy that prefers headers provided with the compiler to
+        other headers having the same name, as opposed to double quotes
+        which typically include local or project-specific header files.</p>
+    </section>
+    <section class="main-section" id="Data_types">
+      <header>Data types</header>
+      <p>The type system in C is static and weakly typed, which makes it similar to the type system of ALGOL descendants
+        such as Pascal.[33] There are built-in types for
+        integers of various sizes, both signed and unsigned, floating-point numbers, and enumerated types (enum).
+        Integer type char is often used for single-byte characters. C99 added
+        a boolean datatype. There are also derived types including arrays, pointers, records (struct), and unions
+        (union).</p>
+      <code>/* Example */
+         struct student {
+                 <span class="tab">char name[20]; </span>
+                 <span class="tab">int roll; </span>
+                 <span class="tab">int marks[5];</span>
+             };</code>
+      <p>C is often used in low-level systems programming where escapes from the type system may be necessary. The
+        compiler attempts to ensure type correctness of most expressions,
+        but the programmer can override the checks in various ways, either by using a type cast to explicitly convert a
+        value from one type to another, or by using pointers or unions to reinterpret
+        the underlying bits of a data object in some other way.</p>
+    </section>
+    <section class="main-section" id="Arrays">
+      <header>Arrays</header>
+      <p>Array types in C are traditionally of a fixed, static size specified at compile time. The more recent C99
+        standard also allows a form of variable-length arrays. However, it is also possible
+        to allocate a block of memory (of arbitrary size) at run-time, using the standard library's malloc function, and
+        treat it as an array. Since arrays are always accessed (in effect) via pointers, array
+        accesses are typically not checked against the underlying array size, although some compilers may provide bounds
+        checking as an option.[35][36] Array bounds violations are therefore possible and can lead
+        to various repercussions, including illegal memory accesses, corruption of data, buffer overruns, and run-time
+        exceptions.</p>
+      <p>C does not have a special provision for declaring multi-dimensional arrays, but rather relies on recursion
+        within the type system to declare arrays of arrays, which effectively accomplishes the same thing.
+        The index values of the resulting "multi-dimensional array" can be thought of as increasing in row-major order.
+        Multi-dimensional arrays are commonly used in numerical algorithms (mainly from applied linear algebra) to
+        store matrices. The structure of the C array is well suited to this particular task. However, in early versions
+        of C the bounds of the array must be known fixed values or else explicitly passed to any subroutine that
+        requires them,
+        and dynamically sized arrays of arrays cannot be accessed using double indexing. (A workaround for this was to
+        allocate the array with an additional "row vector" of pointers to the columns.) C99 introduced "variable-length
+        arrays"
+        which address this issue.</p>
+      <code><pre>int func(int N, int M) {
+  float (*p)[N][M] = malloc(sizeof *p);
+  if (!p)
+    return -1;
+  for (int i = 0; i &lt; N; i++)
+    for (int j = 0; j &lt; M; j++)
+      (*p)[i][j] = i + j;
+  print_array(N, M, p);
+  free(p);
+  return 1;
+}</pre></code>
+    </section>
+  </main>
+
+</body>
+
+</html>
